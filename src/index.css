@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Neon glow effects */
+.neon-blue {
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5),
+              0 0 20px rgba(59, 130, 246, 0.3),
+              0 0 30px rgba(59, 130, 246, 0.1);
+}
+
+.neon-purple {
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.5),
+              0 0 20px rgba(139, 92, 246, 0.3),
+              0 0 30px rgba(139, 92, 246, 0.1);
+}
+
+.neon-orange {
+  box-shadow: 0 0 10px rgba(249, 115, 22, 0.5),
+              0 0 20px rgba(249, 115, 22, 0.3),
+              0 0 30px rgba(249, 115, 22, 0.1);
+}
+
+.neon-green {
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.5),
+              0 0 20px rgba(34, 197, 94, 0.3),
+              0 0 30px rgba(34, 197, 94, 0.1);
+}
+
+/* Particle animation */
+@keyframes particle-float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) translateX(20px);
+    opacity: 0;
+  }
+}
+
+.particle {
+  animation: particle-float 3s ease-in-out infinite;
+}
+
+/* Fire animation */
+@keyframes fire-dance {
+  0%, 100% {
+    transform: scaleY(1) scaleX(1) rotate(-2deg);
+    filter: brightness(1);
+  }
+  25% {
+    transform: scaleY(1.1) scaleX(0.95) rotate(1deg);
+    filter: brightness(1.1);
+  }
+  50% {
+    transform: scaleY(0.95) scaleX(1.05) rotate(-1deg);
+    filter: brightness(1.2);
+  }
+  75% {
+    transform: scaleY(1.05) scaleX(0.98) rotate(2deg);
+    filter: brightness(1.1);
+  }
+}
+
+.fire-animation {
+  animation: fire-dance 0.4s ease-in-out infinite;
+}
+
+/* Confetti burst */
+@keyframes confetti {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.confetti-piece {
+  animation: confetti 1s ease-out forwards;
+}
+
+/* Ripple effect */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.ripple {
+  animation: ripple 0.6s linear;
+}
+
+/* Loading skeleton */
+@keyframes skeleton-loading {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 100%);
+  background-size: 200px 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+/* Streak counter flip animation */
+@keyframes flip-in {
+  0% {
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0);
+    opacity: 1;
+  }
+}
+
+.flip-number {
+  animation: flip-in 0.5s ease-out;
+}
+
+/* Achievement unlock animation */
+@keyframes unlock-burst {
+  0% {
+    transform: scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) rotate(10deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.achievement-unlock {
+  animation: unlock-burst 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Progress bar fill */
+@keyframes progress-fill {
+  0% {
+    width: 0%;
+  }
+}
+
+.progress-animated {
+  animation: progress-fill 1s ease-out;
+}
+
+/* Orbiting particles */
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(30px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(30px) rotate(-360deg);
+  }
+}
+
+.orbit {
+  animation: orbit 4s linear infinite;
+}
