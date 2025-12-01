@@ -10,7 +10,7 @@ export const CONFIG = {
   
   // Твой Notion Integration Token (начинается с "secret_")
   // Получить: https://www.notion.so/my-integrations
-  NOTION_TOKEN: 'YOUR_NOTION_INTEGRATION_TOKEN',
+  NOTION_TOKEN: 'ntn_o22493137458FlOOmm97wTA797ZJ9J1dFp48LD7bMEX1dW',
   
   // ============================================
   // ID ТВОИХ БАЗ ДАННЫХ
@@ -63,7 +63,7 @@ export const CONFIG = {
 // Вариант 2: Свой Cloudflare Worker (рекомендуется)
 // Инструкция по созданию в README.md
 
-export const NOTION_PROXY_URL = 'YOUR_CLOUDFLARE_WORKER_URL';
+export const NOTION_PROXY_URL = 'https://notion-proxy.3462606.workers.dev';
 
 // ============================================
 // МАППИНГ КАТЕГОРИЙ СТРИКОВ
